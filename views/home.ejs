@@ -6,7 +6,15 @@
     <title>Document</title>
 </head>
 <body>
+    <% if(user){ %>
+        <h1>Hello <%- user.username %></h1>
+        <a href="/logout">logout</a>
+
+    <% }else{ %>
     Hello World!(Iam EJS)
     <a href="/signup">signup</a>
+    <a href="/login">login</a>
+    <% } %>
+
 </body>
 </html>

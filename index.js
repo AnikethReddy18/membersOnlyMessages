@@ -1,9 +1,13 @@
 import express from "express"
 import session from "express-session";
 import connectPgSimple from "connect-pg-simple";
+import passport from "passport";
 import "dotenv/config"
 
-import signUpRoute from "./routes/signUpRoute.js"
+import signupRoute from "./routes/signupRouter.js"
+import loginRouter from "./routes/loginRouter.js"
+import logoutRouter from "./routes/logoutRouter.js"
+import "./part.js";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -19,10 +23,16 @@ app.use(session({
     saveUninitialized: false  
 }))
 
+app.use(passport.initialize())
+app.use(passport.session());
+
 app.get("/", (req, res)=>{
-    res.render("home")
+    console.log(req.user);
+    res.render("home", {user: req.user})
 });
 
-app.use("/signUp", signUpRoute)
+app.use("/signUp", signupRoute)
+app.use("/login", loginRouter)
+app.use("/logout", logoutRouter)
 
 app.listen(PORT, ()=>{console.log(`Listening at http://localhost:${PORT}`)})
