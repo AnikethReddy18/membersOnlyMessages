@@ -7,7 +7,8 @@ import "dotenv/config"
 import signupRoute from "./routes/signupRouter.js"
 import loginRouter from "./routes/loginRouter.js"
 import logoutRouter from "./routes/logoutRouter.js"
-import "./part.js";
+import homeRouter from "./routes/homeRouter.js" 
+import "./passportConfig.js";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -26,11 +27,7 @@ app.use(session({
 app.use(passport.initialize())
 app.use(passport.session());
 
-app.get("/", (req, res)=>{
-    console.log(req.user);
-    res.render("home", {user: req.user})
-});
-
+app.get("/", homeRouter);
 app.use("/signUp", signupRoute)
 app.use("/login", loginRouter)
 app.use("/logout", logoutRouter)
