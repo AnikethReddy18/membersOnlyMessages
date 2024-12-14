@@ -27,7 +27,7 @@ app.use(session({
 app.use(passport.initialize())
 app.use(passport.session());
 
-app.get("/", homeRouter);
+app.use("/", homeRouter);
 app.use("/signUp", signupRoute)
 app.use("/login", loginRouter)
 app.use("/logout", logoutRouter)

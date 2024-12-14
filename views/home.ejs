@@ -12,6 +12,18 @@
     <h1>Hello <%- user.username %></h1> 
     <a href="/logout">logout</a>
 
+    <form action="/post" method="post">
+        <input type="text" name="title">
+        <textarea name="content" id=""></textarea>
+        <button>submit</button>
+    </form>
+
+    <% for(const post of posts){%>
+        <h1>Tite: <%- post.title %></h1>
+        <h2>Author: <%- post.username || "anonymous"%></h2>
+        <p>Content: <%- post.content %></p>
+    <%}%>
+
 </body>
 
 </html>
