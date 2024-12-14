@@ -8,6 +8,7 @@ import signupRoute from "./routes/signupRouter.js"
 import loginRouter from "./routes/loginRouter.js"
 import logoutRouter from "./routes/logoutRouter.js"
 import homeRouter from "./routes/homeRouter.js" 
+import membeshipRouter from "./routes/membershipRouter.js"
 import "./passportConfig.js";
 
 const app = express();
@@ -31,5 +32,7 @@ app.use("/", homeRouter);
 app.use("/signUp", signupRoute)
 app.use("/login", loginRouter)
 app.use("/logout", logoutRouter)
+app.use("/membership", membeshipRouter)
+
 
 app.listen(PORT, ()=>{console.log(`Listening at http://localhost:${PORT}`)})

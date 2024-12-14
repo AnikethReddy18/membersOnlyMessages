@@ -9,8 +9,10 @@
 
 <body>
 
-    <h1>Hello <%- user.username %></h1> 
+    <h1>Hello <%- user.username %></h1>
+    <h2>Access Level: <%- user.access_level %></h2> 
     <a href="/logout">logout</a>
+    <a href="/membership">Change Membership</a>
 
     <form action="/post" method="post">
         <input type="text" name="title">
@@ -22,8 +24,7 @@
         <h1>Tite: <%- post.title %></h1>
         <h2>Author: <%- post.username || "anonymous"%></h2>
         <p>Content: <%- post.content %></p>
-    <%}%>
+        <%}%>
 
 </body>
-
 </html>
