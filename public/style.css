@@ -1,0 +1,138 @@
+:root {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #FFF0DC;
+    color: #131010;
+}
+
+nav {
+    display: flex;
+    background-color: #543A14;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-bottom: 3px solid #131010;
+}
+
+nav h1, nav h5 {
+    margin: 0;
+    color: #FFF0DC;
+}
+
+.links {
+    display: flex;
+    gap: 2rem;
+}
+
+a {
+    text-decoration: none;
+    color: #F0BB78;
+    font-weight: bold;
+    border: 1px solid #F0BB78;
+    padding: 0.25rem 0.5rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    background-color: #F0BB78;
+    color: #131010;
+}
+
+.posts {
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.post {
+    background-color: #F0BB78;
+    color: #131010;
+    border-radius: 15px;
+    padding: 1.5rem;
+    border: 3px solid #543A14;
+    box-shadow: 4px 4px 0 #543A14;
+}
+
+.postForm {
+    display: flex;
+    flex-direction: column;
+    background-color: #543A14;
+    color: #FFF0DC;
+    align-items: center;
+    border-radius: 15px;
+    gap: 1.5rem;
+    margin: 2rem auto;
+    padding: 2rem;
+    max-width: 500px;
+    border: 3px solid #131010;
+}
+
+.postForm h1 {
+    margin: 0;
+    color: #F0BB78;
+    border-bottom: 2px solid #F0BB78;
+    padding-bottom: 0.5rem;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #131010;
+    color: #FFF0DC;
+    border: 2px solid #F0BB78;
+    border-radius: 10px;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #131010;
+    color: #FFF0DC;
+    border: 2px solid #F0BB78;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #543A14;
+    color: #F0BB78;
+}
+
+.postTitle {
+    font-size: 1.5rem;
+    color: #543A14;
+    margin-bottom: 0.5rem;
+    border-bottom: 2px solid #543A14;
+    padding-bottom: 0.25rem;
+}
+
+.postAuthor {
+    font-size: 0.9rem;
+    color: #131010;
+    margin-bottom: 1rem;
+}
+
+.postContent {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #543A14;
+    font-style: italic;
+    background-color: rgba(84, 58, 20, 0.1);
+    padding: 1rem;
+    border-left: 4px solid #543A14;
+}
+
+.navLeft{
+    display: flex;
+    gap: 1rem;
+}
+

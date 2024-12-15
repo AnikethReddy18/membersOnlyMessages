@@ -6,7 +6,7 @@ export async function getHomePage(req, res) {
     }
 
     else {
-
+        try{
         if (req.user.access_level < 2) {
             const getQuery = `SELECT username, title, content 
                           FROM posts
@@ -20,6 +20,9 @@ export async function getHomePage(req, res) {
             const { rows } = await pool.query("SELECT title, content FROM posts");
             res.render("home", { user: req.user, posts: rows })
         }
+    }catch(err){
+        log(err)
+    }
     }
 }
 
@@ -29,7 +32,11 @@ export async function postMessage(req, res) {
     }
 
     else {
+        try{
         await pool.query("INSERT INTO posts(user_id, title, content) VALUES($1, $2, $3)", [req.user.user_id, req.body.title, req.body.content])
+        }catch(error){
+            console.log(error)
+        }
         res.redirect("/")
     }
 }

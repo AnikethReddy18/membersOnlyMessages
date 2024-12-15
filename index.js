@@ -12,12 +12,14 @@ import membeshipRouter from "./routes/membershipRouter.js"
 import "./passportConfig.js";
 
 const app = express();
+app.use(express.static('public'));
 const PORT = process.env.PORT || 3000;
 app.set("view engine", "ejs");
 app.use(express.urlencoded({"extended": true}))
 
+
 app.use(session({
-    secret: "Rockstar Gowtham",
+    secret: process.env.SECRET,
     store: new (connectPgSimple(session))({
         conString: process.env.URL
       }),

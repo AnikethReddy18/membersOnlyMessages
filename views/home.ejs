@@ -4,27 +4,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="icon.png" type="image/x-icon">
 </head>
 
 <body>
 
-    <h1>Hello <%- user.username %></h1>
-    <h2>Access Level: <%- user.access_level %></h2> 
-    <a href="/logout">logout</a>
-    <a href="/membership">Change Membership</a>
+    <nav>
 
-    <form action="/post" method="post">
-        <input type="text" name="title">
-        <textarea name="content" id=""></textarea>
-        <button>submit</button>
+        <div class="navLeft">
+            <img src="icon.png" alt="" height="50px">
+            <div class="titles">
+                <h1>Hello <%- user.username %></h1>
+                <h5>Access Level: <%- user.access_level %></h5>
+            </div>
+        </div>
+
+        <div class="links">
+            <a href="/membership">Change Membership</a>
+            <a href="/logout">Logout</a>
+        </div>
+    </nav>
+
+    <form action="/post" method="post" class="postForm">
+        <h1>New Post</h1>
+        <input type="text" name="title" placeholder="Title">
+        <textarea name="content" placeholder="Content"></textarea>
+        <button>Submit</button>
     </form>
 
-    <% for(const post of posts){%>
-        <h1>Tite: <%- post.title %></h1>
-        <h2>Author: <%- post.username || "anonymous"%></h2>
-        <p>Content: <%- post.content %></p>
-        <%}%>
+    <div class="posts">
+        <% for(const post of posts){%>
+            <div class="post">
+                <postHeart>
+                    <div class="postTitle"><%- post.title %></div>
+                    <div class="postAuthor"><%- post.username || "anonymous" %></div>
+                </postHeart>
+                <div class="postContent"><%- post.content %></div>
+            </div>
+            <%}%>
+    </div>
 
 </body>
+
 </html>
