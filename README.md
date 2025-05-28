@@ -26,5 +26,5 @@ npm i
 node index.js
 ```
 
-# [Deployed On Render](https://chatapprest.onrender.com)
+# [Deployed On Render](https://membersonlymessages.onrender.com)
 
